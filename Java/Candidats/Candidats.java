@@ -1,12 +1,10 @@
 package Objectes.Candidats;
 
-import CRUD.CRUD;
-
-import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Candidats {
     Scanner scan = new Scanner(System.in);
+    int candidat_id;
     int candidatura_id;
     int persona_id;
     int provincia_id;
@@ -14,7 +12,8 @@ public class Candidats {
     String tipus;
     //Constructor
 
-    public Candidats(int candidatura_id, int persona_id, int provincia_id, int num_ordre, String tipus){
+    public Candidats(int candidat_id, int candidatura_id, int persona_id, int provincia_id, int num_ordre, String tipus){
+        this.candidat_id = comprovarNumerosPositius(candidat_id);
         this.candidatura_id = comprovarNumerosPositius(candidatura_id);
         this.persona_id = comprovarNumerosPositius(persona_id);
         this. provincia_id = comprovarNumerosPositius(provincia_id);
@@ -48,6 +47,9 @@ public class Candidats {
     }
 
     //Getters
+    public int getCandidat_id() {
+        return candidat_id;
+    }
     public int getCandidatura_id() {
         return candidatura_id;
     }
@@ -69,6 +71,9 @@ public class Candidats {
     }
 
     //Setters
+    public void setCandidat_id(int candidatura_id) {
+        this.candidat_id = candidatura_id;
+    }
     public void setCandidatura_id(int candidatura_id) {
         this.candidatura_id = candidatura_id;
     }
