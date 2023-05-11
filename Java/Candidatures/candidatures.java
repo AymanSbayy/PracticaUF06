@@ -1,17 +1,17 @@
-package Candidatures;
+package Objectes.Candidatures;
 
-public class candidatures {
+public class Candidatura {
 
-        int candidatura_id;
-        int eleccio_id;
-        String codi_candidatura;
-        String nom_curt;
-        String nom_llarg;
-        String codi_acumulacio_provincia;
-        String codi_acumulacio_ca;
-        String codi_acumulario_nacional;
+    int candidatura_id;
+    int eleccio_id;
+    String codi_candidatura;
+    String nom_curt;
+    String nom_llarg;
+    String codi_acumulacio_provincia;
+    String codi_acumulacio_ca;
+    String codi_acumulacio_nacional;
 
-    public candidatures(int candidatura_id, int eleccio_id, String codi_candidatura, String nom_curt, String nom_llarg, String codi_acumulacio_provincia, String codi_acumulacio_ca, String codi_acumulario_nacional) {
+    public Candidatura(int candidatura_id, int eleccio_id, String codi_candidatura, String nom_curt, String nom_llarg, String codi_acumulacio_provincia, String codi_acumulacio_ca, String codi_acumulacio_nacional) {
         this.candidatura_id = IsInt(candidatura_id);
         this.eleccio_id = IsInt(eleccio_id);
         this.codi_candidatura = codi_candidatura;
@@ -19,7 +19,15 @@ public class candidatures {
         this.nom_llarg = nom_llarg;
         this.codi_acumulacio_provincia = codi_acumulacio_provincia;
         this.codi_acumulacio_ca = codi_acumulacio_ca;
-        this.codi_acumulario_nacional = codi_acumulario_nacional;
+        this.codi_acumulacio_nacional = codi_acumulacio_nacional;
+    }
+    public Candidatura(){
+
+    }
+    @Override
+    public String toString(){
+        return "candidatura_id: "+candidatura_id+ "  | eleccio_id: "+eleccio_id+"  | codi_candidatura: "+codi_candidatura+"  | nom_curt: "+nom_curt +
+                "  | nom_llarg: "+nom_llarg+"  | codi_acumulacio_provincia: "+codi_acumulacio_provincia+"  | codi_acumulacio_ca: "+codi_acumulacio_ca+" | codi_acumulacio_nacional: "+codi_acumulacio_nacional;
     }
 
     private int IsInt (int num)
@@ -61,8 +69,8 @@ public class candidatures {
         return codi_acumulacio_ca;
     }
 
-    public String getCodi_acumulario_nacional() {
-        return codi_acumulario_nacional;
+    public String getcodi_acumulacio_nacional() {
+        return codi_acumulacio_nacional;
     }
 
     public void setCandidatura_id(int candidatura_id) {
@@ -93,7 +101,7 @@ public class candidatures {
         this.codi_acumulacio_ca = codi_acumulacio_ca;
     }
 
-    public void setCodi_acumulario_nacional(String codi_acumulario_nacional) {
-        this.codi_acumulario_nacional = codi_acumulario_nacional;
+    public void setcodi_acumulacio_nacional(String codi_acumulacio_nacional) {
+        this.codi_acumulacio_nacional = codi_acumulacio_nacional;
     }
 }
