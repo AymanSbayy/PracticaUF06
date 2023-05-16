@@ -26,8 +26,8 @@ public class Candidatura {
     }
     @Override
     public String toString(){
-        return "candidatura_id: "+candidatura_id+ "  | eleccio_id: "+eleccio_id+"  | codi_candidatura: "+codi_candidatura+"  | nom_curt: "+nom_curt +
-                "  | nom_llarg: "+nom_llarg+"  | codi_acumulacio_provincia: "+codi_acumulacio_provincia+"  | codi_acumulacio_ca: "+codi_acumulacio_ca+" | codi_acumulacio_nacional: "+codi_acumulacio_nacional;
+        return "\n"+"candidatura_id: "+candidatura_id+ "  | eleccio_id: "+eleccio_id+"  | codi_candidatura: "+codi_candidatura+"  | nom_curt: "+nom_curt +
+                "  | nom_llarg: "+nom_llarg+"  | codi_acumulacio_provincia: "+codi_acumulacio_provincia+"  | codi_acumulacio_ca: "+codi_acumulacio_ca+" | codi_acumulacio_nacional: "+codi_acumulacio_nacional + "\n";
     }
 
     private int IsInt (int num)
