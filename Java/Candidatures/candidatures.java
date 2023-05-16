@@ -1,7 +1,9 @@
 package Objectes.Candidatures;
 
-public class Candidatura {
+import java.util.Scanner;
 
+public class Candidatura {
+    Scanner scan = new Scanner(System.in);
     int candidatura_id;
     int eleccio_id;
     String codi_candidatura;
@@ -14,12 +16,12 @@ public class Candidatura {
     public Candidatura(int candidatura_id, int eleccio_id, String codi_candidatura, String nom_curt, String nom_llarg, String codi_acumulacio_provincia, String codi_acumulacio_ca, String codi_acumulacio_nacional) {
         this.candidatura_id = IsInt(candidatura_id);
         this.eleccio_id = IsInt(eleccio_id);
-        this.codi_candidatura = codi_candidatura;
+        this.codi_candidatura = IsChar(codi_candidatura);
         this.nom_curt = nom_curt;
         this.nom_llarg = nom_llarg;
-        this.codi_acumulacio_provincia = codi_acumulacio_provincia;
-        this.codi_acumulacio_ca = codi_acumulacio_ca;
-        this.codi_acumulacio_nacional = codi_acumulacio_nacional;
+        this.codi_acumulacio_provincia = IsChar(codi_acumulacio_provincia);
+        this.codi_acumulacio_ca = IsChar(codi_acumulacio_ca);
+        this.codi_acumulacio_nacional = IsChar(codi_acumulacio_nacional);
     }
     public Candidatura(){
 
@@ -30,15 +32,27 @@ public class Candidatura {
                 "  | nom_llarg: "+nom_llarg+"  | codi_acumulacio_provincia: "+codi_acumulacio_provincia+"  | codi_acumulacio_ca: "+codi_acumulacio_ca+" | codi_acumulacio_nacional: "+codi_acumulacio_nacional + "\n";
     }
 
-    private int IsInt (int num)
-    {
+    private int IsInt (int num) {
         boolean flag = false;
-        while (flag == false)
-        {
-            if(num >= 0) flag = true;
-            else flag = false;
+        while(!flag){
+            if (num > 0) flag = true;
+            else {
+                System.out.println("El numero es negatiu o no es un numero positiu, torna a posar-ho:");
+                num = scan.nextInt();
+            }
         }
         return num;
+    }
+    private String IsChar(String s){
+        boolean flag = false;
+        while (!flag){
+            if (s.length() > 7) flag = true;
+            else {
+                System.out.println("El String introduït es passa més de 6 caracters");
+                s = scan.nextLine();
+            }
+        }
+        return s;
     }
 
     public int getEleccio_id() {
