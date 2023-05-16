@@ -121,7 +121,7 @@ public class CandidaturaDAO extends ConnectionDB implements CRUD<Candidatura> {
     }
 
     @Override
-    public boolean count() {
+    public int count() {
         String query = "SELECT COUNT(*) FROM candidatures";
 
         try{
@@ -129,11 +129,11 @@ public class CandidaturaDAO extends ConnectionDB implements CRUD<Candidatura> {
 
             ResultSet rs = preparedStmt.executeQuery();
 
-            if (rs.next()) return true;
-            else return false;
+            if (rs.next()) return rs.getInt(1);
+            else return 0;
         }catch (Exception e){
             System.out.println(e);
-            return false;
+            return 0;
         }
     }
 
@@ -141,13 +141,13 @@ public class CandidaturaDAO extends ConnectionDB implements CRUD<Candidatura> {
     public List<Candidatura> all() {
         String query = "SELECT * FROM candidatures";
         List<Candidatura> camps = new ArrayList<>();
-        Candidatura c = new Candidatura();
         try {
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             ResultSet rs = preparedStmt.executeQuery();
 
             while (rs.next()){
+                Candidatura c = new Candidatura();
                 c.setCandidatura_id(rs.getInt("candidatura_id"));
                 c.setEleccio_id(rs.getInt("eleccio_id"));
                 c.setCodi_candidatura(rs.getString("codi_candidatura"));
