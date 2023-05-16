@@ -37,7 +37,7 @@ public class Candidatura {
         while(!flag){
             if (num > 0) flag = true;
             else {
-                System.out.println("El numero es negatiu o no es un numero positiu, torna a posar-ho:");
+                System.out.println("El numero no es un numero positiu, torna a posar-ho:");
                 num = scan.nextInt();
             }
         }
