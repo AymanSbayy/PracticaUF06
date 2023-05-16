@@ -17,8 +17,8 @@ public class Candidatura {
         this.candidatura_id = IsInt(candidatura_id);
         this.eleccio_id = IsInt(eleccio_id);
         this.codi_candidatura = IsChar(codi_candidatura);
-        this.nom_curt = nom_curt;
-        this.nom_llarg = nom_llarg;
+        this.nom_curt = StringLength50(nom_curt);
+        this.nom_llarg = StringLength150(nom_llarg);
         this.codi_acumulacio_provincia = IsChar(codi_acumulacio_provincia);
         this.codi_acumulacio_ca = IsChar(codi_acumulacio_ca);
         this.codi_acumulacio_nacional = IsChar(codi_acumulacio_nacional);
@@ -54,6 +54,29 @@ public class Candidatura {
         }
         return s;
     }
+    private String StringLength50(String s){
+        boolean flag = false;
+        while (!flag){
+            if (s.length() > 50) flag = true;
+            else {
+                System.out.println("El String introduït es passa més de 50 caracters");
+                s = scan.nextLine();
+            }
+        }
+        return s;
+    }
+    private String StringLength150(String s){
+        boolean flag = false;
+        while (!flag){
+            if (s.length() > 150) flag = true;
+            else {
+                System.out.println("El String introduït es passa més de 150 caracters");
+                s = scan.nextLine();
+            }
+        }
+        return s;
+    }
+
 
     public int getEleccio_id() {
         return eleccio_id;
