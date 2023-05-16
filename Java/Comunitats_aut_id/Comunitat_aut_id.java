@@ -13,6 +13,13 @@ public class Comunitat_aut {
         this.nom = StringLength45(nom);
         this.codi_ine = IsChar(codi_ine);
     }
+    public Comunitat_aut(){
+
+    }
+    @Override
+    public String toString(){
+        return "\n"+"Comunitat_aut_id: "+comunitat_aut_id+ "  | nom: "+nom+"  | codi_ine: "+codi_ine+"\n";
+    }
     private int IsInt(int num){
         boolean flag = false;
         while(!flag){
