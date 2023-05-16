@@ -34,7 +34,7 @@ public class Comunitat_aut {
     private String IsChar(String s){
         boolean flag = false;
         while (!flag){
-            if (s.length() > 7) flag = true;
+            if (s.length() < 7) flag = true;
             else {
                 System.out.println("El String introduït es passa més de 6 caracters");
                 s = scan.nextLine();
@@ -45,7 +45,7 @@ public class Comunitat_aut {
     private String StringLength45(String s){
         boolean flag = false;
         while (!flag){
-            if (s.length() > 45) flag = true;
+            if (s.length() < 45) flag = true;
             else {
                 System.out.println("El String introduït es passa més de 45 caracters");
                 s = scan.nextLine();
