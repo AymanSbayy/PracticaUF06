@@ -46,7 +46,7 @@ public class Candidatura {
     private String IsChar(String s){
         boolean flag = false;
         while (!flag){
-            if (s.length() > 7) flag = true;
+            if (s.length() < 7) flag = true;
             else {
                 System.out.println("El String introduït es passa més de 6 caracters");
                 s = scan.nextLine();
@@ -57,7 +57,7 @@ public class Candidatura {
     private String StringLength50(String s){
         boolean flag = false;
         while (!flag){
-            if (s.length() > 50) flag = true;
+            if (s.length() < 50) flag = true;
             else {
                 System.out.println("El String introduït es passa més de 50 caracters");
                 s = scan.nextLine();
